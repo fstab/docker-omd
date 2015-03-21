@@ -15,7 +15,7 @@ RUN gpg --keyserver keys.gnupg.net --recv-keys F8C1CA08A57B9ED7
 RUN gpg --armor --export F8C1CA08A57B9ED7 | apt-key add -
 RUN echo "deb http://labs.consol.de/repo/stable/ubuntu precise main" >> /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -y libpython2.7 omd
+RUN apt-get install -y libpython2.7 omd apache2-mpm-prefork
 
 # Set up a default site
 RUN omd create default
